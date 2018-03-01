@@ -5,6 +5,10 @@
     <groupId>com.ljm.rpc</groupId>
     <artifactId>beggar-rpc-project</artifactId>
     <version>${revision}</version>
+    <modules>
+        <module>beggar-rpc-server</module>
+        <module>beggar-rpc-client</module>
+    </modules>
 
     <packaging>pom</packaging>
 
