@@ -9,6 +9,7 @@
         <module>beggar-rpc-core</module>
         <module>beggar-rpc-server</module>
         <module>beggar-rpc-client</module>
+        <module>beggar-rpc-protocols</module>
     </modules>
 
     <packaging>pom</packaging>
