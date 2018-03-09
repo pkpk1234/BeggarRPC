@@ -1,4 +1,4 @@
-package com.ljm.rpc.common.codec;
+package com.ljm.codec;
 
 /**
  * 序列化和反序列化接口
