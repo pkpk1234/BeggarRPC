@@ -7,5 +7,7 @@ package com.ljm.protocol;
  * @date 2018-03-09
  */
 public class Header {
+    //协议版本号
+    private int version;
     
 }
