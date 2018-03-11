@@ -9,5 +9,12 @@ package com.ljm.protocol;
 public class Header {
     //协议版本号
     private int version;
-    
+    //消息ID
+    private int id;
+    //消息体长度
+    private int dataSize;
+    //消息类型
+    private int type;
+
+
 }
