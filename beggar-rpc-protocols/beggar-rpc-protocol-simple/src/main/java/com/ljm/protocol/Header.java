@@ -15,6 +15,7 @@ public class Header {
     private int dataSize;
     //消息类型
     private int type;
-
+    //body的MD5
+    private String md5sum;
 
 }

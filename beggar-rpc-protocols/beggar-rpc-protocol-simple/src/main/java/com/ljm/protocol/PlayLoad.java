@@ -7,6 +7,7 @@ package com.ljm.protocol;
  * @date 2018-03-09
  */
 public class PlayLoad {
+    //消息内容
     private byte[] content;
 
     public PlayLoad(byte[] content) {
