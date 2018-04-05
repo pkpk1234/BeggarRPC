@@ -5,4 +5,5 @@ package com.beggar.rpc.io;
  * @date 2018-04-05
  */
 public interface ChannelProvider {
+    IOChannel provide();
 }
