@@ -5,14 +5,8 @@
     <groupId>com.ljm.rpc</groupId>
     <artifactId>beggar-rpc-project</artifactId>
     <version>${revision}</version>
-    <modules>
-        <module>beggar-rpc-core</module>
-        <module>beggar-rpc-server</module>
-        <module>beggar-rpc-client</module>
-        <module>beggar-rpc-protocols</module>
-    </modules>
 
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>beggar rpc Project</name>
     <description>beggar rpc Project</description>
@@ -26,64 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <netty.version>4.1.22.Final</netty.version>
-        <snakeyaml.version>1.19</snakeyaml.version>
-        <guava.version>20.0</guava.version>
-        <reflections.version>0.9.11</reflections.version>
-        <kryo.version>4.0.1</kryo.version>
-        <protobuf.version>3.3.1</protobuf.version>
-        <thrift.version>0.9.2</thrift.version>
         <!-- Test -->
         <junit.version>4.12</junit.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.yaml</groupId>
-                <artifactId>snakeyaml</artifactId>
-                <version>${snakeyaml.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.reflections</groupId>
-                <artifactId>reflections</artifactId>
-                <version>${reflections.version}</version>
-            </dependency>
-            <!-- serializers -->
-            <dependency>
-                <groupId>com.esotericsoftware</groupId>
-                <artifactId>kryo</artifactId>
-                <version>${kryo.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.protobuf</groupId>
-                <artifactId>protobuf-java</artifactId>
-                <version>${protobuf.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.thrift</groupId>
-                <artifactId>libthrift</artifactId>
-                <version>${thrift.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
