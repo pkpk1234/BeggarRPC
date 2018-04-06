@@ -33,5 +33,5 @@ public class TestSnowFlakeIdGenerator {
         Long id2 = nextId();
         assertTrue(id2 > id1);
     }
-    
+
 }
