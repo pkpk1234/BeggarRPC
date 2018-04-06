@@ -30,6 +30,15 @@ public class Message {
     private int version;
     private long messageId;
     private long bodySize;
+    private byte[] playload;
+
+    public byte[] getPlayload() {
+        return playload;
+    }
+
+    public void setPlayload(byte[] playload) {
+        this.playload = playload;
+    }
 
     public byte[] getMAGIC_NUMBER() {
         return MAGIC_NUMBER;
