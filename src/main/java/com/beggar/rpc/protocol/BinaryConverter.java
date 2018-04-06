@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
  * @date 2018-04-06
  */
 public class BinaryConverter {
-    
+
     public static byte[] int2Bytes(int i) {
         return ByteBuffer.allocate(4).putInt(i).array();
     }

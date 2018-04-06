@@ -14,21 +14,29 @@ public class BinaryProtocol extends Protocol {
 
     @Override
     public void writeInt(int i) {
-
+        byte[] bytes = BinaryConverter.int2Bytes(i);
+        this.ioChannel.write(bytes, 0, bytes.length);
     }
 
     @Override
     public void writeLong(long l) {
-
+        byte[] bytes = BinaryConverter.long2Bytes(l);
+        this.ioChannel.write(bytes, 0, bytes.length);
     }
 
     @Override
     public int readInt() {
-        return 0;
+        byte[] bytes = new byte[4];
+        this.ioChannel.read(bytes, 0, bytes.length);
+        int i = BinaryConverter.bytes2Int(bytes);
+        return i;
     }
 
     @Override
     public long readLong() {
-        return 0;
+        byte[] bytes = new byte[8];
+        this.ioChannel.read(bytes, 0, bytes.length);
+        long l = BinaryConverter.bytes2Long(bytes);
+        return l;
     }
 }
