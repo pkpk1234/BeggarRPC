@@ -1,6 +1,6 @@
 package com.beggar.rpc.server;
 
-import com.beggar.rpc.io.ChannelProvider;
+import com.beggar.rpc.io.IOChannelProvider;
 import com.beggar.rpc.protocol.ProtocolProvider;
 
 /**
@@ -9,5 +9,5 @@ import com.beggar.rpc.protocol.ProtocolProvider;
  */
 public abstract class AbstractServer implements Server {
     private ProtocolProvider protocolProvider;
-    private ChannelProvider channelProvider;
+    private IOChannelProvider IOChannelProvider;
 }
