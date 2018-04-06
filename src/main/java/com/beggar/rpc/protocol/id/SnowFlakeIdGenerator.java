@@ -1,4 +1,4 @@
-package com.beggar.rpc.protocol;
+package com.beggar.rpc.protocol.id;
 
 import com.relops.snowflake.Snowflake;
 
@@ -11,10 +11,26 @@ import com.relops.snowflake.Snowflake;
 public class SnowFlakeIdGenerator implements IdGenerator<Long> {
     private int currentNode;
     private Snowflake snowflake;
+    private static volatile SnowFlakeIdGenerator INSTANCE;
 
-    public SnowFlakeIdGenerator(int currentNode) {
+    private SnowFlakeIdGenerator(int currentNode) {
         this.currentNode = currentNode;
         snowflake = new Snowflake(this.currentNode);
+    }
+
+    /**
+     * 因为需要传参数，所以无法使用static instance holder，只能用DLC
+     *
+     * @param currentNode
+     * @return
+     */
+    public static SnowFlakeIdGenerator getInstance(int currentNode) {
+        if (INSTANCE == null) {
+            synchronized (SnowFlakeIdGenerator.class) {
+                INSTANCE = new SnowFlakeIdGenerator(currentNode);
+            }
+        }
+        return INSTANCE;
     }
 
     public int getCurrentNode() {
