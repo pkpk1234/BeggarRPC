@@ -23,6 +23,7 @@
         <snowflake.version>1.1</snowflake.version>
         <!-- Test -->
         <junit.version>4.12</junit.version>
+
     </properties>
 
     <dependencies>
@@ -30,6 +31,27 @@
             <groupId>com.relops</groupId>
             <artifactId>snowflake</artifactId>
             <version>${snowflake.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.7</version>
         </dependency>
     </dependencies>
 
