@@ -9,16 +9,13 @@ import java.util.Objects;
  * |   |   |   |   |   |   |   |   |
  * +---+---+---+---+---+---+---+---+
  * |               |               |
- * |  Header Size  |  version      |
+ * |   Type        |  version      |
  * +---+---+---+---+---+---+---+---+
  * |                               |
  * |   message id : snowflake      |
  * +---+---+---+---+---+---+---+---+
  * |                               |
  * |   Body Size                   |
- * +---+---+---+---+---+---+---+---+
- * |
- * |   Header Attachments       ... ...
  * +---+---+---+---+---+---+---+---+
  * |
  * |   Body Content             ... ...
@@ -29,7 +26,7 @@ import java.util.Objects;
  */
 public class Message {
     protected final byte[] MAGIC_NUMBER = "0beggar0".getBytes();
-    private int headerSize;
+    private int type;
     private int version;
     private long messageId;
     private long bodySize;
@@ -38,12 +35,12 @@ public class Message {
         return MAGIC_NUMBER;
     }
 
-    public int getHeaderSize() {
-        return headerSize;
+    public int getType() {
+        return type;
     }
 
-    public void setHeaderSize(int headerSize) {
-        this.headerSize = headerSize;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getVersion() {
@@ -73,7 +70,7 @@ public class Message {
     @Override
     public String toString() {
         return "Message{" +
-                "headerSize=" + headerSize +
+                "type=" + type +
                 ", version=" + version +
                 ", messageId=" + messageId +
                 ", bodySize=" + bodySize +
@@ -89,7 +86,7 @@ public class Message {
             return false;
         }
         Message message = (Message) o;
-        return headerSize == message.headerSize &&
+        return type == message.type &&
                 version == message.version &&
                 messageId == message.messageId &&
                 bodySize == message.bodySize;
@@ -98,6 +95,6 @@ public class Message {
     @Override
     public int hashCode() {
 
-        return Objects.hash(headerSize, version, messageId, bodySize);
+        return Objects.hash(type, version, messageId, bodySize);
     }
 }
