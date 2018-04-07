@@ -1,6 +1,6 @@
 package com.beggar.rpc.protocol;
 
-import com.beggar.rpc.io.IOChannelProvider;
+import com.beggar.rpc.io.IOChannel;
 
 /**
  * @author 李佳明 https://github.com/pkpk1234
@@ -8,8 +8,8 @@ import com.beggar.rpc.io.IOChannelProvider;
  */
 public abstract class BinaryProtocol extends Protocol {
 
-    public BinaryProtocol(IOChannelProvider ioChannelProvider) {
-        super(ioChannelProvider);
+    public BinaryProtocol(IOChannel ioChannel) {
+        super(ioChannel);
     }
 
     @Override

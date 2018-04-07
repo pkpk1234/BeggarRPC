@@ -1,19 +1,16 @@
 package com.beggar.rpc.protocol;
 
 import com.beggar.rpc.io.IOChannel;
-import com.beggar.rpc.io.IOChannelProvider;
 
 /**
  * @author 李佳明 https://github.com/pkpk1234
  * @date 2018-04-05
  */
 public abstract class Protocol {
-    private IOChannelProvider ioChannelProvider;
     protected IOChannel ioChannel;
 
-    public Protocol(IOChannelProvider ioChannelProvider) {
-        this.ioChannelProvider = ioChannelProvider;
-        this.ioChannel = ioChannelProvider.provide();
+    public Protocol(IOChannel ioChannel) {
+        this.ioChannel = ioChannel;
     }
 
     // write methods
