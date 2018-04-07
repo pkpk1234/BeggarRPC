@@ -16,7 +16,7 @@ public class TestSnowFlakeIdGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestSnowFlakeIdGenerator.class);
 
     private Long nextId() {
-        return SnowFlakeIdGenerator.getInstance(1).next();
+        return SnowFlakeIdGenerator.getInstance().next();
     }
 
     @Test

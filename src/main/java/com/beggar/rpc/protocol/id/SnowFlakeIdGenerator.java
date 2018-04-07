@@ -12,7 +12,6 @@ public class SnowFlakeIdGenerator implements IdGenerator<Long> {
     private int currentNode;
     private Snowflake snowflake;
     private static volatile SnowFlakeIdGenerator INSTANCE;
-    private NodeNumberFactory nodeNumberFactory;
 
     private SnowFlakeIdGenerator(NodeNumberFactory nodeNumberFactory) {
         this.currentNode = nodeNumberFactory.getNodeNumber();
