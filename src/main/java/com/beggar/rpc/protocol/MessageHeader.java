@@ -3,25 +3,17 @@ package com.beggar.rpc.protocol;
 import java.util.Objects;
 
 /**
- * VO类，存放Message信息
+ * VO类，存放Message头信息
+ *
  * @author 李佳明 https://github.com/pkpk1234
  * @date 2018-04-06
  */
-public class Message {
+public class MessageHeader {
     protected final byte[] MAGIC_NUMBER = "0beggar0".getBytes();
     private int type;
     private int version;
     private long messageId;
     private long bodySize;
-    private byte[] playload;
-
-    public byte[] getPlayload() {
-        return playload;
-    }
-
-    public void setPlayload(byte[] playload) {
-        this.playload = playload;
-    }
 
     public byte[] getMAGIC_NUMBER() {
         return MAGIC_NUMBER;
@@ -61,7 +53,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
+        return "MessageHeader{" +
                 "type=" + type +
                 ", version=" + version +
                 ", messageId=" + messageId +
@@ -77,11 +69,11 @@ public class Message {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Message message = (Message) o;
-        return type == message.type &&
-                version == message.version &&
-                messageId == message.messageId &&
-                bodySize == message.bodySize;
+        MessageHeader messageHeader = (MessageHeader) o;
+        return type == messageHeader.type &&
+                version == messageHeader.version &&
+                messageId == messageHeader.messageId &&
+                bodySize == messageHeader.bodySize;
     }
 
     @Override

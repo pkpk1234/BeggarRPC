@@ -40,7 +40,7 @@ public class MessageProtocol extends BinaryProtocol {
         return this.idGenerator.next();
     }
 
-    public void writeMessage(Message message) {
+    public void writeMessage(MessageHeader messageHeader) {
 
     }
 }
