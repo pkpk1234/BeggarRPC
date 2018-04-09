@@ -29,18 +29,22 @@ import com.beggar.rpc.protocol.id.SnowFlakeIdGenerator;
  * @author 李佳明 https://github.com/pkpk1234
  * @date 2018-04-06
  */
-public class MessageProtocol extends BinaryProtocol {
+public class MessageProtocol extends BinaryProtocol<MessageHeader> {
     private IdGenerator<Long> idGenerator = SnowFlakeIdGenerator.getInstance();
 
     public MessageProtocol(IOChannel ioChannel) {
         super(ioChannel);
     }
 
-    private long getMessageId() {
-        return this.idGenerator.next();
+    @Override
+    public void begin(MessageHeader header) {
     }
 
-    public void writeMessage(MessageHeader messageHeader) {
+
+    @Override
+    public void end() {
 
     }
+
+
 }

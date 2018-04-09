@@ -6,7 +6,7 @@ import com.beggar.rpc.io.IOChannel;
  * @author 李佳明 https://github.com/pkpk1234
  * @date 2018-04-06
  */
-public abstract class BinaryProtocol extends Protocol {
+public abstract class BinaryProtocol<T> extends Protocol<T> {
 
     public BinaryProtocol(IOChannel ioChannel) {
         super(ioChannel);

@@ -6,12 +6,17 @@ import com.beggar.rpc.io.IOChannel;
  * @author 李佳明 https://github.com/pkpk1234
  * @date 2018-04-05
  */
-public abstract class Protocol {
+public abstract class Protocol<T> {
     protected IOChannel ioChannel;
 
     public Protocol(IOChannel ioChannel) {
         this.ioChannel = ioChannel;
     }
+
+    // being and end methods
+    public abstract void begin(T header);
+
+    public abstract void end();
 
     // write methods
 
