@@ -9,7 +9,7 @@ import java.util.Objects;
  * @date 2018-04-06
  */
 public class MessageHeader {
-    protected final byte[] MAGIC_NUMBER = "0beggar0".getBytes();
+    public final byte[] MAGIC_NUMBER = "0beggar0".getBytes();
     private int type;
     private int version;
     private long messageId;

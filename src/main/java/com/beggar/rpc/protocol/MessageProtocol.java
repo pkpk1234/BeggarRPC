@@ -4,6 +4,8 @@ import com.beggar.rpc.io.IOChannel;
 import com.beggar.rpc.protocol.id.IdGenerator;
 import com.beggar.rpc.protocol.id.SnowFlakeIdGenerator;
 
+import java.nio.charset.Charset;
+
 /**
  *
  * 读写message
@@ -30,6 +32,7 @@ import com.beggar.rpc.protocol.id.SnowFlakeIdGenerator;
  * @date 2018-04-06
  */
 public class MessageProtocol extends BinaryProtocol<MessageHeader> {
+    public static final Charset UTF8 = Charset.forName("UTF-8");
     private IdGenerator<Long> idGenerator = SnowFlakeIdGenerator.getInstance();
 
     public MessageProtocol(IOChannel ioChannel) {
@@ -38,6 +41,8 @@ public class MessageProtocol extends BinaryProtocol<MessageHeader> {
 
     @Override
     public void begin(MessageHeader header) {
+        //首先写入MAGIC Number
+        this.writeBytes(header.MAGIC_NUMBER);
     }
 
 

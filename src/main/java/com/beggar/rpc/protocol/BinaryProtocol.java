@@ -39,4 +39,6 @@ public abstract class BinaryProtocol<T> extends Protocol<T> {
         long l = BinaryConverter.bytes2Long(bytes);
         return l;
     }
+
+
 }
