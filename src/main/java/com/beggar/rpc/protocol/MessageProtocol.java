@@ -43,6 +43,13 @@ public class MessageProtocol extends BinaryProtocol<MessageHeader> {
     public void begin(MessageHeader header) {
         //首先写入MAGIC Number
         this.writeBytes(header.MAGIC_NUMBER);
+        //写入type
+        this.writeInt(header.getType());
+        //写入version
+        this.writeInt(header.getVersion());
+        //写入message id
+        this.writeLong(this.idGenerator.next());
+        //之后可以写body了//TODO:body size怎么搞？？？
     }
 
 
