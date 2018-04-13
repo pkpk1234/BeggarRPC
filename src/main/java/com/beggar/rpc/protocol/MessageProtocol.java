@@ -49,7 +49,7 @@ public class MessageProtocol extends BinaryProtocol<MessageHeader> {
         this.writeInt(header.getVersion());
         //写入message id
         this.writeLong(this.idGenerator.next());
-        //之后可以写body了//TODO:body size怎么搞？？？
+        //之后可以写body size了//TODO:body size怎么搞？？？
     }
 
 
